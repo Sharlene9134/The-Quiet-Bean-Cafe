@@ -147,32 +147,44 @@
     </aside>
 
     <main class="main-container">
-        <h1>Customer Management</h1>
+        <h1>Inventory Management</h1>
 
         <div class="childmain-container">
             <div class="search-filter-bar">
-                <input type="text" placeholder="🔍 Search Customer by name..." id="searchInput" onkeyup="searchTable()">
+                <input type="text" placeholder="🔍 Search staff by item id, item name, category..." id="searchInput" onkeyup="searchTable()">
+                <select id="roleFilter" onchange="filterTable()">
+                    <option value="all">All</option>
+                    <option value="Admin">In Stock</option>
+                    <option value="Manager">Low in Stock</option>
+                    <option value="Staff">Out of Stock</option>
+                </select>
             </div>
 
             <div>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Customer</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Total Orders</th>
-                            <th>Total Spent</th>
+                            <th>Item ID</th>
+                            <th>Item name</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Unit</th>
+                            <th>Status</th>
+                            <th>Expiration Date</th>
+                            <th>Supplier Name</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>John Doe</td>
-                            <td>+1 (555) 123-4567</td>
-                            <td>john.doe@email.com</td>
-                            <td>47</td>
-                            <td>3,245</td>
+                            <td>IT-0001</td>
+                            <td>Milk</td>
+                            <td>Dairy</td>
+                            <td>5</td>
+                            <td>1 liter per box</td>
+                            <td>Low in Stock</td>
+                            <td>September 28, 2026</td>
+                            <td>Dairy Farm Co.</td>
                             <td><button>More info</button><button>Edit</button><button>Delete</button></td>
                         </tr>
                     </tbody>

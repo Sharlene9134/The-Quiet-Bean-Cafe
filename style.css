@@ -13,7 +13,7 @@ body{
 /* Sidebar Styles */
 .sidebar{
     background-color: #4E342E;
-    width: 250px;
+    width: 300px;
     padding: 20px;
     height: 100vh;
     overflow-y: auto;
@@ -31,6 +31,11 @@ body{
 
 .sidebar h3{
     color: #F5F5F5;
+}
+
+.sidebar a i {
+    font-size: 16px;
+    margin-right: 12px;
 }
 
 .nav-list a {
