@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .childmain-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 10px;
+            width: 1240px; 
+            max-width: 100%;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .search-filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .search-filter-bar input,
+        .search-filter-bar select {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            flex: 1;
+            min-width: 150px;
+            transition: all 0.3s ease;
+        }
+
+        .search-filter-bar input:focus,
+        .search-filter-bar select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-filter-bar input::placeholder {
+            color: #b0b0b0;
+        } */
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-top: 15px;
+        }
+
+        .data-table thead {
+            background: #4E342E;
+            color: white;
+        }
+
+        .data-table th {
+            padding: 15px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tbody tr:hover {
+            background: #f8f5f2;
+            cursor: pointer;
+        }
+
+        .data-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h3>The Quiet Bean</h3>
+
+        <div class="sidebar-section">
+            <h3>Admin</h3>
+            <div class="nav-list">
+                <a href="admin_dashboard.html">Dashboard</a>
+                <a href="staff_management.html"><i class="bi bi-people-fill"></i>Staff Management</a>
+                <a><i class="bi bi-box-seam"></i>Inventory Management</a>
+                <a>Supplier Management</a>
+                <a>Deliveries</a>
+                <a><i class="bi bi-clipboard-data"></i>Reports</a>
+                <a>Audit Logs</a>
+                <a><i class="bi bi-gear-fill"></i>Settings</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Reception</h3>
+            <div class="nav-list">
+                <a>Dashboard</a>
+                <a href="customer_management.html">Customer Management</a>
+                <a>Reservations</a>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Cafe Area</h3>
+            <div class="nav-list">
+                <a>Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Reading Lounge -->
+        <div class="sidebar-section">
+            <h3>Reading Lounge</h3>
+            <div class="nav-list">
+                <a>Dashboard</a>
+                <a>Book Catalog</a>
+                <a>Occupancy</a>
+                <a>Reading fees</a>
+            </div>
+        </div>
+
+        <!-- Study Lounge -->
+        <div class="sidebar-section">
+            <h3>Study Lounge</h3>
+            <div class="nav-list">
+                <a>Dashboard</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <h1>Customer Management</h1>
+
+        <div class="childmain-container">
+            <div class="search-filter-bar">
+                <input type="text" placeholder="🔍 Search Customer by name..." id="searchInput" onkeyup="searchTable()">
+            </div>
+
+            <div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Total Orders</th>
+                            <th>Total Spent</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>+1 (555) 123-4567</td>
+                            <td>john.doe@email.com</td>
+                            <td>47</td>
+                            <td>3,245</td>
+                            <td><button>More info</button><button>Edit</button><button>Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
