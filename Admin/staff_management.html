@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        /* .search-filter-bar {
+        .search-filter-bar {
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
@@ -27,11 +27,9 @@
             background: white;
             padding: 15px 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .search-filter-bar input,
-        .search-filter-bar select {
+        .search-filter-bar input, .search-filter-bar select {
             padding: 10px 15px;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
@@ -41,17 +39,16 @@
             transition: all 0.3s ease;
         }
 
-        .search-filter-bar input:focus,
-        .search-filter-bar select:focus {
+        .search-filter-bar input:focus, .search-filter-bar select:focus {
             outline: none;
             border-color: #667eea;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
         }
 
         .search-filter-bar input::placeholder {
             color: #b0b0b0;
-        } */
+        }
 
+        /* Table */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -89,6 +86,168 @@
         .data-table tbody tr:last-child td {
             border-bottom: none;
         }
+
+        /* Sidebar */
+        button i {
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .addbtn {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: flex-end;
+            float: right;
+            background-color: #4E342E;
+            color: #ffffff;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.5);
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Modal Box */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            background: white;
+            border-radius: 15px;
+        }
+
+        /* Header */
+        .modal-header{
+            background: #4E342E;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 25px;
+        }
+
+        .modal-header h2{
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .close-btn{
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Body */
+        .modal-body{
+            padding: 25px;
+        }
+
+        .input-group{
+            margin-bottom: 18px;
+        }
+
+        .input-group label{
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #D7CCC8;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus{
+            border-color: #D4A373;
+        }
+
+        /* Footer */
+        .modal-footer{
+            padding: 20px 25px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .cancel-btn{
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #D4A373;
+            color: white;
+            cursor: pointer;
+        }
+
+        .save-btn{
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #4E342E;
+            color: white;
+            cursor: pointer;
+        }
+
+        .save-btn:hover{
+            background: #6D4C41;
+        }
+
+        /* Animation */
+        @keyframes popup{
+            from{
+                transform: scale(.9);
+                opacity: 0;
+            }
+
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -97,12 +256,13 @@
         <h3>The Quiet Bean</h3>
 
         <div class="sidebar-section">
+            <!-- Admin Area -->
             <h3>Admin</h3>
             <div class="nav-list">
                 <a href="admin_dashboard.html"><i class="bi bi-house"></i>Dashboard</a>
                 <a href="staff_management.html"><i class="bi bi-people"></i>Staff Management</a>
                 <a href="inventory_management.html"><i class="bi bi-box-seam"></i>Inventory Management</a>
-                <a><i class="bi bi-shop"></i>Supplier Management</a>
+                <a href="supplier_management.html"><i class="bi bi-shop"></i>Supplier Management</a>
                 <a><i class="bi bi-truck"></i>Deliveries</a>
                 <a><i class="bi bi-clipboard-data"></i>Reports</a>
                 <a><i class="bi bi-journal-text"></i>Audit Logs</a>
@@ -110,6 +270,7 @@
             </div>
         </div>
 
+        <!-- Reception Area -->
         <div class="sidebar-section">
             <h3>Reception</h3>
             <div class="nav-list">
@@ -119,6 +280,7 @@
             </div>
         </div>
 
+        <!-- Cafe Area -->
         <div class="sidebar-section">
             <h3>Cafe Area</h3>
             <div class="nav-list">
@@ -150,10 +312,6 @@
         <h1>Staff Management</h1>
 
         <div class="childmain-container">
-            <div>
-                <button>Add Staff</button>
-            </div>
-
             <div class="search-filter-bar">
                 <input type="text" placeholder="🔍 Search staff by name, email, or role..." id="searchInput" onkeyup="searchTable()">
                 <select id="roleFilter" onchange="filterTable()">
@@ -171,6 +329,10 @@
                     <option value="Pending">Pending</option>
                     <option value="On Leave">On Leave</option>
                 </select>
+            </div>
+
+            <div>
+                <button class="addbtn" onclick="openModal()"><i class="bi bi-person-plus"></i>Add Staff</button>
             </div>
 
             <div>
@@ -206,6 +368,60 @@
                 </table>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div id="staffModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter full name">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter email">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Position</label>
+                        <select>
+                            <option>Select Position</option>
+                            <option>Receptionist</option>
+                            <option>Barista</option>
+                            <option>Manager</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Contact Number</label>
+                        <input type="text" placeholder="Enter contact number">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="cancel-btn" onclick="closeModal()">
+                        Cancel
+                    </button>
+
+                    <button class="save-btn">
+                        Save Staff
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
+
+<script>
+    function openModal() {
+        document.getElementById("staffModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("staffModal").style.display = "none";
+    }
+</script>
 </html>

@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        /* .search-filter-bar {
+        .search-filter-bar {
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
@@ -27,7 +27,6 @@
             background: white;
             padding: 15px 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .search-filter-bar input,
@@ -45,12 +44,11 @@
         .search-filter-bar select:focus {
             outline: none;
             border-color: #667eea;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
         }
 
         .search-filter-bar input::placeholder {
             color: #b0b0b0;
-        } */
+        }
 
         .data-table {
             width: 100%;
@@ -97,7 +95,7 @@
         <h3>The Quiet Bean</h3>
 
         <div class="sidebar-section">
-            <!-- Admin Area -->
+            <!-- Admin -->
             <h3>Admin</h3>
             <div class="nav-list">
                 <a href="admin_dashboard.html"><i class="bi bi-house"></i>Dashboard</a>
@@ -121,7 +119,7 @@
             </div>
         </div>
 
-        <!-- Cafe Area -->
+        <!-- Cafe -->
         <div class="sidebar-section">
             <h3>Cafe Area</h3>
             <div class="nav-list">
@@ -150,36 +148,44 @@
     </aside>
 
     <main class="main-container">
-        <h1>Customer Management</h1>
+        <h1>Supplier Management</h1>
 
         <div class="childmain-container">
             <div class="search-filter-bar">
-                <input type="text" placeholder="🔍 Search Customer by name..." id="searchInput" onkeyup="searchTable()">
+                <input type="text" placeholder="🔍 Search staff by company supplier and product name" id="searchInput" onkeyup="searchTable()">
+                <!-- <select id="roleFilter" onchange="filterTable()">
+                    <option value="all">All</option>
+                    <option value="Admin">In Stock</option>
+                    <option value="Manager">Low in Stock</option>
+                    <option value="Staff">Out of Stock</option>
+                </select> -->
             </div>
 
             <div>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Customer</th>
-                            <th>Age</th>
+                            <th>Company Supplier</th>
                             <th>Address</th>
-                            <th>Phone</th>
+                            <th>Contact number</th>
                             <th>Email</th>
-                            <th>Total Orders</th>
-                            <th>Total Spent</th>
-                            <th>Actions</th>
+                            <th>Product Name</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>John Doe</td>
-                            <td>28</td>
-                            <td>Brgy. Flower 185</td>
-                            <td>+1 (555) 123-4567</td>
-                            <td>john.doe@email.com</td>
-                            <td>47</td>
-                            <td>3,245</td>
+                            <td>Bean and Co.</td>
+                            <td>Brgy. 123</td>
+                            <td>09237639291</td>
+                            <td>beanandco.@gmail.com</td>
+                            <td>Almond milk</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td><button>More info</button><button>Edit</button><button>Delete</button></td>
                         </tr>
                     </tbody>
