@@ -19,6 +19,37 @@
             align-items: center;
         }
 
+        /* Search Bar */
+        .search-filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+
+        .search-filter-bar input,
+        .search-filter-bar select {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            flex: 1;
+            min-width: 150px;
+            transition: all 0.3s ease;
+        }
+
+        .search-filter-bar input:focus,
+        .search-filter-bar select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-filter-bar input::placeholder {
+            color: #b0b0b0;
+        }
+
         /* Table */
         .data-table {
             width: 100%;
@@ -125,6 +156,7 @@
                 <input type="text" placeholder="🔍 Search audit logs by name..." id="searchInput" onkeyup="searchTable()">
                 <select>
                     <option value="All Modules">All Modules</option>
+                    <option value="Authentication">Authentication</option>
                     <option value="Staff Management">Staff Management</option>
                     <option value="Inventory">Inventory</option>
                     <option value="Purchase Orders">Purchase Orders</option>
@@ -138,6 +170,7 @@
                         <th>Date</th>
                         <th>Time</th>
                         <th>Staff</th>
+                        <th>Role</th>
                         <th>Module</th>
                         <th>Action</th>
                         <th>Details</th>
@@ -146,7 +179,8 @@
                         <tr>
                             <td>Jul 1, 2026</td>
                             <td>09:15 AM</td>
-                            <td>John Cruz (Admin)</td>
+                            <td>John Cruz</td>
+                            <td>Admin</td>
                             <td>Purchase Orders</td>
                             <td>Created</td>
                             <td>Created Purchase Order PO-002 for supplier "Dairy Farm Co."</td>
