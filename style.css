@@ -64,3 +64,15 @@ body{
     padding: 20px;
     overflow-y: auto;
 }
+
+.childmain-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 10px;
+    width: 1240px; 
+    max-width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+}
